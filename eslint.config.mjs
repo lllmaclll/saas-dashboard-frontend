@@ -19,7 +19,7 @@ const eslintConfig = defineConfig([
     },
   },
   // ------------------------------------
-  
+
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:
@@ -27,6 +27,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+
+    // --- [สำคัญ] เพิ่ม 2 บรรทัดนี้เข้าไป ---
+    "jest.config.js",
+    "jest.setup.js",
   ]),
 ]);
 
