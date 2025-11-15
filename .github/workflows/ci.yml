@@ -1,0 +1,40 @@
+# .github/workflows/ci.yml
+
+name: Continuous Integration
+
+# กำหนดว่าจะให้ Workflow นี้ทำงานเมื่อไหร่
+on:
+  push:
+    branches: [ "main" ] # ทำงานเมื่อมีการ Push ไปที่ Branch 'main'
+  pull_request:
+    branches: [ "main" ] # ทำงานเมื่อมีการเปิด PR มาที่ Branch 'main'
+
+# กำหนดงานที่จะทำ
+jobs:
+  build_and_test:
+    name: Build and Test
+    runs-on: ubuntu-latest # ระบุว่าจะรันบน OS อะไร
+
+    steps:
+      # Step 1: เช็คเอาท์โค้ดจาก Repository ของเรา
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: ตั้งค่า Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm' # ทำ Cache node_modules เพื่อให้รันครั้งต่อไปเร็วขึ้น
+
+      # Step 3: ติดตั้ง Dependencies
+      - name: Install dependencies
+        run: npm ci # ใช้ npm ci จะเร็วกว่าและปลอดภัยกว่า npm install ใน CI
+
+      # Step 4: รัน Lint เพื่อตรวจสอบ Code Style
+      - name: Run Lint
+        run: npm run lint
+
+      # Step 5: รัน Tests
+      - name: Run Tests
+        run: npm test -- --ci --coverage # เพิ่ม flag --ci เพื่อให้ Jest ไม่รันใน watch mode
