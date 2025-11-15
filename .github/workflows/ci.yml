@@ -37,4 +37,5 @@ jobs:
 
       # Step 5: รัน Tests
       - name: Run Tests
-        run: npm test -- --ci --coverage # เพิ่ม flag --ci เพื่อให้ Jest ไม่รันใน watch mode
+        # run: npm test -- --ci --coverage # เพิ่ม flag --ci เพื่อให้ Jest ไม่รันใน watch mode
+        run: npm test -- --coverage
