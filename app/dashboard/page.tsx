@@ -4,7 +4,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useMetrics } from '@/hooks/useMetrics';
 import { Skeleton } from '@/components/ui/skeleton'; // ต้องเพิ่ม Component นี้จาก shadcn/ui
-import { SalesChart } from '@/components/dashboard/SalesChart'; // <--- เพิ่ม import นี้
 import dynamic from 'next/dynamic'; // 1. Import dynamic จาก Next.js
 
 // 2. สร้าง Dynamic Component
