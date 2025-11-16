@@ -18,6 +18,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'lh3.googleusercontent.com', // ตัวอย่างสำหรับรูปจาก Google
       },
+      { 
+        protocol: 'https', 
+        hostname: 'i.pravatar.cc' 
+      },
     ],
   },
 };

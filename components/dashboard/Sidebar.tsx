@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { useSidebarStore } from '@/store/useSidebarStore'; // นำเข้า Store
-import { cn } from '@/lib/utilities/utils'; // นำเข้า Utility สำหรับรวม Class (มีอยู่แล้ว)
+import { cn } from '@/lib/utilities/utils';
 
 export function Sidebar() {
   const { isOpen } = useSidebarStore(); // ดึง State มาใช้

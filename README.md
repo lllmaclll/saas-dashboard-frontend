@@ -6,9 +6,15 @@
 
 ## 🚀 Features
 
+-   **Authentication:** Secure user login/logout functionality using NextAuth.js (Credentials Provider).
+-   **Protected Routes:** Dashboard and its sub-pages are protected and accessible only to authenticated users.
+-   **User Profile Management:** Users can view and update their profile information.
 -   **Responsive Design:** Fully functional and aesthetic UI for both desktop and mobile devices.
 -   **Interactive UI:** Smooth sidebar interactions with animations.
 -   **Data Visualization:** Interactive charts to display key metrics (MRR, Active Users).
+-   **Data Tables:** Sortable and paginated data tables for detailed reports.
+-   **Form & Security:** Secure form handling with client-side validation and XSS protection awareness.
+-   **Comprehensive Testing:** Includes Unit and Integration tests for core logic and UI interactions.
 -   **Performance Optimized:** Blazing fast loading times thanks to Lazy Loading components and Next.js Image Optimization.
 -   **Live Error Monitoring:** Integrated with Sentry for real-time error tracking in production.
 
