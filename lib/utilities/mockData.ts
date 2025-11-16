@@ -1,6 +1,6 @@
 // lib/mockData.ts
 
-import { MetricData } from "./types/metric";
+import { MetricData } from "../types/metric";
 
 export const mockData: MetricData[] = [
   { date: '2025-01-01', mrr: 15000, activeUsers: 250, churnRate: 5.2, ltv: 3000 },

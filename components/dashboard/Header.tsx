@@ -4,20 +4,28 @@
 import { Button } from '@/components/ui/button';
 import { User } from '@/lib/types/user';
 import { useSidebarStore } from '@/store/useSidebarStore'; // 1. นำเข้า Store และ Action
-import { PanelLeftClose, PanelRightClose } from 'lucide-react'; // 2. Icon สวยๆ (ต้องติดตั้ง lucide-react)
+import { Menu, PanelLeftClose, PanelRightClose } from 'lucide-react'; // 2. Icon สวยๆ (ต้องติดตั้ง lucide-react)
 import Image from 'next/image';
 
 // Mock User
 const MOCK_USER: User = { id: '1', name: 'John Doe', email: 'john@example.com', role: 'admin' };
 
 export function Header() {
-  const { isOpen, toggle } = useSidebarStore(); // 3. ดึง State และ Action มา
+  const { isOpen, toggle } = useSidebarStore();
 
   return (
-    <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">      
-      <Button variant="ghost" size="icon" onClick={toggle}>
+    <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background py-2 px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
+      
+      {/* ปุ่มสำหรับ Mobile */}
+      <Button variant="ghost" size="icon" onClick={toggle} aria-label="Open sidebar menu" className="sm:hidden">
+        <Menu className="h-5 w-5" />
+      </Button>
+
+      {/* ปุ่มสำหรับ Desktop */}
+      <Button variant="ghost" size="icon" onClick={toggle} aria-label="Toggle sidebar collapse" className="hidden sm:inline-flex">
         {isOpen ? <PanelLeftClose className="h-5 w-5" /> : <PanelRightClose className="h-5 w-5" />}
       </Button>
+
       <div className="text-xl font-semibold hidden md:block">
         Dashboard Overview
       </div>

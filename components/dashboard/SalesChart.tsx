@@ -2,7 +2,7 @@
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { mockData } from '@/lib/mockData'; // เราจะใช้ Mock Data ที่มีอยู่
+import { mockData } from '@/lib/utilities/mockData'; // เราจะใช้ Mock Data ที่มีอยู่
 import { Line, LineChart, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 export function SalesChart() {

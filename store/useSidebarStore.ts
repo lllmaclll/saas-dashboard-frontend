@@ -1,16 +1,14 @@
 // store/useSidebarStore.ts
 import { create } from 'zustand';
 
-// 1. กำหนด Type สำหรับ State และ Actions
 type SidebarState = {
   isOpen: boolean;
   toggle: () => void;
+  setIsOpen: (isOpen: boolean) => void; // เพิ่ม Action สำหรับตั้งค่าโดยตรง
 };
 
-// 2. สร้าง Store
 export const useSidebarStore = create<SidebarState>((set) => ({
-  // State เริ่มต้น
-  isOpen: true,
-  // Action ที่ใช้เปลี่ยน State
+  isOpen: true, // กลับไปใช้ค่าเริ่มต้นที่ง่ายที่สุด
   toggle: () => set((state) => ({ isOpen: !state.isOpen })),
+  setIsOpen: (isOpen) => set({ isOpen }), // Action ใหม่
 }));

@@ -3,7 +3,7 @@
 import { MetricData } from '@/lib/types/metric';
 import { 
   // getMockMetrics, 
-  mockData } from '@/lib/mockData';
+  mockData } from '@/lib/utilities/mockData';
 
 export const fetchMetrics = async (): Promise<MetricData[]> => {
   // จำลองความล่าช้าในการ Fetch (เช่น 500ms) เพื่อให้เห็น Loading State
